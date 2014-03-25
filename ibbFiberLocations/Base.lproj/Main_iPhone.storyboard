@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Pyf-6o-sY0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller - Kayıt-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -13,18 +13,301 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yf-G1-odh">
+                                <rect key="frame" x="95" y="86" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+ Yeni Kayıt">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="chy-SU-T6c" kind="push" id="571-gB-fvq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JET-Pn-y6y">
+                                <rect key="frame" x="95" y="124" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Kayıt Listesi">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Fv8-Vq-CoH" kind="push" id="YXf-eJ-qKu"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JET-Pn-y6y" secondAttribute="bottom" constant="326" id="Fnd-Zl-7AB"/>
+                            <constraint firstAttribute="trailing" secondItem="JET-Pn-y6y" secondAttribute="trailing" constant="95" id="GQT-KI-aIy"/>
+                            <constraint firstItem="JET-Pn-y6y" firstAttribute="top" secondItem="1yf-G1-odh" secondAttribute="bottom" constant="8" id="fCt-9D-HXU"/>
+                            <constraint firstItem="1yf-G1-odh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="95" id="geX-9w-6XK"/>
+                            <constraint firstAttribute="trailing" secondItem="1yf-G1-odh" secondAttribute="trailing" constant="95" id="mKr-Zr-tbd"/>
+                            <constraint firstItem="1yf-G1-odh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="22" id="rv0-A9-jXD"/>
+                            <constraint firstItem="JET-Pn-y6y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="95" id="v7A-MZ-o98"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Kayıt" id="0dW-e9-XTR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="654" y="179"/>
+        </scene>
+        <!--Load Fiber RecordsTVC - Kayıt Listesi-->
+        <scene sceneID="Lea-K4-yId">
+            <objects>
+                <tableViewController id="Fv8-Vq-CoH" customClass="loadFiberRecordsTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ynA-q9-HIY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Fiber Records Cell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Fiber Records Cell" textLabel="V3p-sD-3JU" detailTextLabel="wc7-jr-pgt" style="IBUITableViewCellStyleSubtitle" id="JdX-kx-Wod">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JdX-kx-Wod" id="TrK-Da-3Po">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V3p-sD-3JU">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wc7-jr-pgt">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Af8-nW-mdJ" kind="push" identifier="Display Record" id="A7K-TJ-Dye"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Fv8-Vq-CoH" id="v4f-pi-TTM"/>
+                            <outlet property="delegate" destination="Fv8-Vq-CoH" id="hxd-WD-iHf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Kayıt Listesi" id="ycy-Qc-ds5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z2x-Oh-lVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="180"/>
+        </scene>
+        <!--View Controller - Kayıt Detay-->
+        <scene sceneID="4wa-DV-Q5I">
+            <objects>
+                <viewController id="Af8-nW-mdJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BDZ-t9-Vx6"/>
+                        <viewControllerLayoutGuide type="bottom" id="hiD-b5-WtD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fhc-O7-s3A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Güzergah Tipi : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKv-Fl-3cn">
+                                <rect key="frame" x="20" y="73" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Boru Tipi : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUb-RE-oam">
+                                <rect key="frame" x="20" y="102" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Boru Adet : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJm-iy-PwE">
+                                <rect key="frame" x="20" y="131" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UmO-ex-ken">
+                                <rect key="frame" x="20" y="160" width="280" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVg-2g-MZz">
+                                <rect key="frame" x="254" y="415" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="map_location_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Wnu-zp-9ik" kind="push" identifier="Record Location" id="esn-fK-Afb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFg-XB-pJb">
+                                <rect key="frame" x="188" y="415" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="photo_Icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="elM-Tw-Wqz" kind="push" id="AaX-pt-ku6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kayıt Detay" id="usS-72-Pkq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYp-Ee-vaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1541" y="180"/>
+        </scene>
+        <!--View Controller - Kayıt Lokasyonu-->
+        <scene sceneID="SrY-i4-WwS">
+            <objects>
+                <viewController id="Wnu-zp-9ik" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yyG-4x-iQi"/>
+                        <viewControllerLayoutGuide type="bottom" id="dnw-bn-si6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hZE-Qb-C7T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="z0z-cP-y5x">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z0z-cP-y5x" firstAttribute="top" secondItem="hZE-Qb-C7T" secondAttribute="top" id="DmC-UM-Vlk"/>
+                            <constraint firstItem="z0z-cP-y5x" firstAttribute="leading" secondItem="hZE-Qb-C7T" secondAttribute="leading" id="JbP-cB-Vgt"/>
+                            <constraint firstAttribute="bottom" secondItem="z0z-cP-y5x" secondAttribute="bottom" id="m4S-HO-GZl"/>
+                            <constraint firstAttribute="trailing" secondItem="z0z-cP-y5x" secondAttribute="trailing" id="wj3-UM-Ag7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kayıt Lokasyonu" id="vUd-CV-pLe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="poj-0u-t9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2054" y="180"/>
+        </scene>
+        <!--View Controller - Kayıt Resmi-->
+        <scene sceneID="5p7-JB-hDJ">
+            <objects>
+                <viewController id="elM-Tw-Wqz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vfr-lg-u47"/>
+                        <viewControllerLayoutGuide type="bottom" id="X9U-jP-Kfn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5xi-U8-X1f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jQ7-QD-eEv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jQ7-QD-eEv" firstAttribute="leading" secondItem="5xi-U8-X1f" secondAttribute="leading" id="Ltb-IS-Pu4"/>
+                            <constraint firstAttribute="bottom" secondItem="jQ7-QD-eEv" secondAttribute="bottom" id="Ztt-bM-JU7"/>
+                            <constraint firstAttribute="trailing" secondItem="jQ7-QD-eEv" secondAttribute="trailing" id="aMA-ge-r5i"/>
+                            <constraint firstItem="jQ7-QD-eEv" firstAttribute="top" secondItem="5xi-U8-X1f" secondAttribute="top" id="puP-8W-HRj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kayıt Resmi" id="KKr-cb-lUC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5kP-Av-fK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2054" y="790"/>
+        </scene>
+        <!--View Controller - Yeni Kayıt-->
+        <scene sceneID="AJm-nU-k1T">
+            <objects>
+                <viewController id="chy-SU-T6c" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zId-hS-yOy"/>
+                        <viewControllerLayoutGuide type="bottom" id="JGu-fV-xzV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qGi-IV-KZo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ft5-Hn-U0Y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="415"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Iof-sl-cWk">
+                                <rect key="frame" x="0.0" y="416" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kaZ-cM-DND">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Iof-sl-cWk" firstAttribute="leading" secondItem="ft5-Hn-U0Y" secondAttribute="leading" id="AgJ-Kv-fCH"/>
+                            <constraint firstAttribute="bottom" secondItem="Iof-sl-cWk" secondAttribute="bottom" id="V4M-XM-0dm"/>
+                            <constraint firstItem="ft5-Hn-U0Y" firstAttribute="leading" secondItem="qGi-IV-KZo" secondAttribute="leading" id="Vdc-Bt-P2y"/>
+                            <constraint firstItem="Iof-sl-cWk" firstAttribute="trailing" secondItem="ft5-Hn-U0Y" secondAttribute="trailing" id="cl0-1t-OOA"/>
+                            <constraint firstAttribute="trailing" secondItem="ft5-Hn-U0Y" secondAttribute="trailing" id="fER-gt-L1a"/>
+                            <constraint firstItem="ft5-Hn-U0Y" firstAttribute="top" secondItem="qGi-IV-KZo" secondAttribute="top" id="htT-1J-80e"/>
+                            <constraint firstItem="JGu-fV-xzV" firstAttribute="top" secondItem="ft5-Hn-U0Y" secondAttribute="bottom" constant="65" id="oRB-gO-vQK"/>
+                            <constraint firstItem="Iof-sl-cWk" firstAttribute="top" secondItem="zId-hS-yOy" secondAttribute="bottom" constant="352" id="tqc-D7-WRV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Yeni Kayıt" id="IpQ-FB-wnE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7n-pL-URJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="808"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="554-pD-iXS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pyf-6o-sY0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yaa-AP-Rvl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="gny-5P-Zqp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qhY-Ne-Ln1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229" y="179"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map_location_icon" width="32" height="32"/>
+        <image name="photo_Icon" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

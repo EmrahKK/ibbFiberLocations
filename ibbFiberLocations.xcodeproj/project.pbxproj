@@ -22,6 +22,9 @@
 		B930C40F18E004AE00FAD93A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B930C3EE18E004AE00FAD93A /* UIKit.framework */; };
 		B930C41718E004AE00FAD93A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B930C41518E004AE00FAD93A /* InfoPlist.strings */; };
 		B930C41918E004AE00FAD93A /* ibbFiberLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C41818E004AE00FAD93A /* ibbFiberLocationsTests.m */; };
+		B930C42318E0093300FAD93A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B930C42218E0093300FAD93A /* MapKit.framework */; };
+		B930C42618E019D000FAD93A /* fiberRecordsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C42518E019D000FAD93A /* fiberRecordsTVC.m */; };
+		B94F6DF918E16AAC004690EC /* loadFiberRecordsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B94F6DF818E16AAC004690EC /* loadFiberRecordsTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,11 @@
 		B930C41418E004AE00FAD93A /* ibbFiberLocationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ibbFiberLocationsTests-Info.plist"; sourceTree = "<group>"; };
 		B930C41618E004AE00FAD93A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B930C41818E004AE00FAD93A /* ibbFiberLocationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ibbFiberLocationsTests.m; sourceTree = "<group>"; };
+		B930C42218E0093300FAD93A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B930C42418E019D000FAD93A /* fiberRecordsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fiberRecordsTVC.h; sourceTree = "<group>"; };
+		B930C42518E019D000FAD93A /* fiberRecordsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fiberRecordsTVC.m; sourceTree = "<group>"; };
+		B94F6DF718E16AAC004690EC /* loadFiberRecordsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadFiberRecordsTVC.h; sourceTree = "<group>"; };
+		B94F6DF818E16AAC004690EC /* loadFiberRecordsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loadFiberRecordsTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B930C42318E0093300FAD93A /* MapKit.framework in Frameworks */,
 				B930C3ED18E004AE00FAD93A /* CoreGraphics.framework in Frameworks */,
 				B930C3EF18E004AE00FAD93A /* UIKit.framework in Frameworks */,
 				B930C3EB18E004AE00FAD93A /* Foundation.framework in Frameworks */,
@@ -84,6 +93,7 @@
 		B930C3DE18E004AE00FAD93A = {
 			isa = PBXGroup;
 			children = (
+				B9C1603B18E069DC00C28F05 /* model */,
 				B930C3F018E004AE00FAD93A /* ibbFiberLocations */,
 				B930C41218E004AE00FAD93A /* ibbFiberLocationsTests */,
 				B930C3E918E004AE00FAD93A /* Frameworks */,
@@ -103,6 +113,7 @@
 		B930C3E918E004AE00FAD93A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B930C42218E0093300FAD93A /* MapKit.framework */,
 				B930C3EA18E004AE00FAD93A /* Foundation.framework */,
 				B930C3EC18E004AE00FAD93A /* CoreGraphics.framework */,
 				B930C3EE18E004AE00FAD93A /* UIKit.framework */,
@@ -117,6 +128,10 @@
 				B930C3F918E004AE00FAD93A /* AppDelegate.h */,
 				B930C3FA18E004AE00FAD93A /* AppDelegate.m */,
 				B930C3FC18E004AE00FAD93A /* Main_iPhone.storyboard */,
+				B94F6DF718E16AAC004690EC /* loadFiberRecordsTVC.h */,
+				B94F6DF818E16AAC004690EC /* loadFiberRecordsTVC.m */,
+				B930C42418E019D000FAD93A /* fiberRecordsTVC.h */,
+				B930C42518E019D000FAD93A /* fiberRecordsTVC.m */,
 				B930C3FF18E004AE00FAD93A /* Main_iPad.storyboard */,
 				B930C40218E004AE00FAD93A /* ViewController.h */,
 				B930C40318E004AE00FAD93A /* ViewController.m */,
@@ -153,6 +168,13 @@
 				B930C41518E004AE00FAD93A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9C1603B18E069DC00C28F05 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,9 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94F6DF918E16AAC004690EC /* loadFiberRecordsTVC.m in Sources */,
 				B930C40418E004AE00FAD93A /* ViewController.m in Sources */,
 				B930C3FB18E004AE00FAD93A /* AppDelegate.m in Sources */,
 				B930C3F718E004AE00FAD93A /* main.m in Sources */,
+				B930C42618E019D000FAD93A /* fiberRecordsTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +494,7 @@
 				B930C41E18E004AE00FAD93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B930C41F18E004AE00FAD93A /* Build configuration list for PBXNativeTarget "ibbFiberLocationsTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +503,7 @@
 				B930C42118E004AE00FAD93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
